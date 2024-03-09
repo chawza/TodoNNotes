@@ -6,9 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Card
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -33,10 +34,11 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun TodoItem(title: String) {
-    Card(
+    Row(
         modifier = Modifier
+            .background(Color.LightGray, shape = RoundedCornerShape(8.dp))
             .fillMaxWidth()
-            .background(Color.LightGray)
+            .padding(8.dp)
     ) {
         Text(
             text = title,
@@ -62,6 +64,7 @@ fun Layout() {
             Column(
                 modifier = Modifier
                     .padding(innerPadding)
+                    .padding(20.dp)
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(10.dp)
 
